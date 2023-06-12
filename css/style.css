@@ -1,12 +1,36 @@
 #wrapper {
     display: grid;
     grid-gap: 5px;
-    grid-template-rows: 100px 100px 100px;
+    grid-template-rows: 79px 330px 115px;
     grid-template-areas: 
-        ". . h h h h h h h . ."
-        ". . c c c c c c c . ."
-        ". . f f f f f f f . .";
+        ". h h h h h h h . . ."
+        ". s s s s c c c . . ."
+        ". f f f f f f f . . .";
+}
+#mainWrapper {
+    display: grid;
+    border-radius: 20px;
+    grid-area: 1 / 2 / 5;
+    margin-left: -8%;
+    width: 694%;
+    margin-top: -6%;
+    margin-bottom: -2%;
+    border: 4px solid #241a49;
+}
 
+#menuClick {
+    display: grid;
+    text-align: center;
+    border: 3px solid #344;
+    background: #333;
+    border-radius: 19px;
+    grid-area: 1 / 1 / 6;
+    margin-top: -7px;
+    margin-bottom: 3px;
+}
+#menuClick:hover {
+    display: grid;
+    background: #223;
 }
 
 #header {
@@ -24,6 +48,16 @@
     grid-area: c;
 }
 #mainContent {
+    display: grid;
+    border-radius: 20px;
+    background: #333;
+}
+
+#sidebar {
+    display: grid;
+    grid-area: s;
+}
+#mainSidebar {
     display: grid;
     border-radius: 20px;
     background: #333;
