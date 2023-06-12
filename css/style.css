@@ -1,0 +1,17 @@
+#wrapper {
+    display: grid;
+}
+
+#header {
+    display: grid;
+}
+#mainHeader {
+    display: grid;
+}
+
+#content {
+    display: grid;
+}
+#mainContent {
+    display: grid;
+}
