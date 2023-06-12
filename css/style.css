@@ -1,17 +1,37 @@
 #wrapper {
     display: grid;
+    grid-gap: 5px;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-areas: 
+        "h h h h h h h h h h h"
+        "c c c c c c c c c c c"
+        "f f f f f f f f f f f";
+
 }
 
 #header {
     display: grid;
+    grid-area: h;
 }
 #mainHeader {
     display: grid;
+    background: #444;
 }
 
 #content {
     display: grid;
+    grid-area: c;
 }
 #mainContent {
     display: grid;
+    background: #333;
+}
+
+#footer {
+    display: grid;
+    grid-area: f;
+}
+#mainFooter {
+    display: grid;
+    background: #222;
 }
