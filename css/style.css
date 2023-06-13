@@ -84,7 +84,6 @@
 
 #textHeader h1 {
     display: flex;
-   
     font-weight: normal;
     cursor: pointer;
     text-shadow: 0 0 0 rgb(75, 100, 4);
