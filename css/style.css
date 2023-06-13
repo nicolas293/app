@@ -26,10 +26,9 @@
 }
 #clonMainWrapper {
     display: grid;
-    margin-left: 95%;
-    margin-right: 30%;
+    margin-left: 98%;
     height: 786%;
-    width: 890%;
+    width: 954%;
     border: 4px solid #241b50;
     border-radius: 20px;
     margin-top: -5px;
@@ -42,8 +41,8 @@
     text-align: center;
     border: 3px solid rgb(50, 124, 124);
     background: #333;
-    min-height: 97%;
-    min-width: 7%;
+    height: 97%;
+    width: 7%;
     margin-bottom: -6%;
     border-radius: 5px;
     align-items: center;
@@ -61,7 +60,7 @@
 #mainHeader {
     display: grid;
     border-radius: 20px;
-    background: #444;
+    background: #444;         
 }
 
 #content {
@@ -73,6 +72,35 @@
     border-radius: 20px;
     background: #333;
 }
+
+#textHeader {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#textHeader h1 {
+    display: flex;
+   
+    font-weight: normal;
+    cursor: pointer;
+    text-shadow: 0 0 0 rgb(75, 100, 4);
+    color: transparent;
+    animation: shadows 5s infinite ease-in;
+}
+@keyframes shadows {
+    60% {
+    text-shadow: 0 0 0 rgb(117, 177, 5);
+   } 
+    90% {
+        text-shadow: 0 30px 40px transparent; 
+    }
+    100% {
+        text-shadow: 0 0 0 transparent;
+    }
+}
+
+
 
 #sidebar {
     display: grid;
