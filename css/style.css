@@ -22,9 +22,7 @@
 }
 
 #mainWrapper {
-    display: grid;
-    
-    
+    display: grid;   
 }
 #clonMainWrapper {
     display: grid;
@@ -50,6 +48,7 @@
     border-radius: 5px;
     align-items: center;
 }
+
 #menuClick:hover {
     display: grid;
     background: #223;
