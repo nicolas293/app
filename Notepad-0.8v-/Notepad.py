@@ -41,12 +41,13 @@ def on_text_change(event=None):
    global is_modified
    is_modified = True
    update_title()
+   
 line_numbers.bind('<<Modified>>', on_text_change)
 
 def new_file():
     line_numbers.delete(1.0, tk.END)
 
-def OpenFile(): # Функция открытей фаела
+def OpenFile(event): # Функция открытей фаела
     global is_modified
     file_path = fd.askopenfilename()
     if file_path:
@@ -60,7 +61,7 @@ def OpenFile(): # Функция открытей фаела
         except Exception as e:
             messagebox.showerror("Error", str(e))
 
-def SaveFile(): # Функция сохранение фаела
+def SaveFile(event): # Функция сохранение фаела
     global is_modified
     file_path = fd.asksaveasfilename(defaultextension=".txt",
                                    filetypes=[("Text files", "*.txt"),
@@ -95,20 +96,38 @@ def on_click(event):
     print("Клик")
 
 def my_copy():
-    line_numbers.insert(INSERT, line_numbers.get("1.0", "end-1c"))
+    line_numbers.event_generate("<<Copy>>")
 
+def my_paste():
+    line_numbers.event_generate("<<Paste>>")
+     
 def Quit():
-    quit()
+    MsgBox = messagebox.askquestion("Выход из Программы: Notepad-0.8v", "Ты диствительно хочешь выйти?")
+    if MsgBox == 'yes':
+        win.destroy()
 # Функции Notepad-0.8v
+
+# icons menu
+iconsOpen = tk.PhotoImage(file="icons/openicon.png")
+saveicon = tk.PhotoImage(file="icons/saveicon.png")
+newfile = tk.PhotoImage(file="icons/newfile.png")
+quiticon = tk.PhotoImage(file="icons/quiticon.png")
+# icons menu
 
 win.bind("<Button-1>", on_click)
 win.bind("<Button-3>", my_popup)
+
+# быстрее клавиши
+win.bind("<Control-Key-o>", OpenFile)
+win.bind("<Control-Key-s>", SaveFile)
+# быстрее клавиши
 
 my_menu = Menu(win, background='#66c1d0', tearoff=0)
 my_menu.add_command(label='Open File', command=OpenFile)
 my_menu.add_command(label='Save File', command=SaveFile)
 my_menu.add_separator()
-my_menu.add_command(label='copy-text', command=my_copy)
+my_menu.add_command(label='Copy Text', command=my_copy)
+my_menu.add_command(label='Paste Text', command=my_paste)
 my_menu.add_separator()
 my_menu.add_command(label='Цыфровый часы', command=myTeme)
 my_menu.add_command(label='Календарь', command=mycal)
@@ -137,10 +156,10 @@ edit.add_separator()
 edit.add_command(label='чётчик слов', command=my_counter)
 
 file = Menu(win, background='#66c1d0', tearoff=0)
-file.add_command(label='New File', command=new_file)
+file.add_command(label='New File', command=new_file, image=newfile, compound='left')
 file.add_separator()
-file.add_command(label='Open File', command=OpenFile)
-file.add_command(label='Save File', command=SaveFile)
+file.add_command(label='Open File', command=OpenFile, image=iconsOpen, compound='left', accelerator='Ctrl+O')
+file.add_command(label='Save File', command=SaveFile, image=saveicon, compound='left', accelerator='Ctrl+S')
 file.add_separator()
 file.add_command(label='Выбор Цвета', command=myStytsColor)
 file.add_separator()
@@ -149,7 +168,7 @@ file.add_command(label='Календарь', command=mycal)
 file.add_separator()
 file.add_command(label='Auto-закрытие', command=lambda: windowsOpenWin(win))
 file.add_separator()
-file.add_command(label='Quit File', command=Quit)
+file.add_command(label='Quit File', command=Quit, image=quiticon, compound='left')
 
 editVersions = Menu(win, background='#66c1d0', tearoff=0)
 editVersions.add_command(label='Помощь', command=newPomaq)
