@@ -1,6 +1,6 @@
 import tkinter as tk
 import tkinter as ttk
-from __init__ import *
+from init import *
 from tkinter.scrolledtext import Frame, ScrolledText
 
 root = tk.Tk()

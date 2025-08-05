@@ -16,4 +16,4 @@ def myTeme():
     lable.pack(anchor='center')
     time()
 
-    tqme.mainloop()
+    # tqme.mainloop()
