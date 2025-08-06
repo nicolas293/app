@@ -16,7 +16,7 @@ from AllProgrammNot.keyboard import VirtualKeyboard, Application
 from AllProgrammNot.FunWindow import funWindowNew
 
 # ------------------------------------------------------
-import tkinter as tk
+# import tkinter as tk
 from tkinter import ttk
 from tkinter.scrolledtext import ScrolledText
 from tkinter import messagebox
